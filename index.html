@@ -5,6 +5,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <link rel="icon" href="tw.png" sizes="16x16" type="image/png">
     <link href="style.css" rel="stylesheet">
+    <link href="table.css" rel="stylesheet">
     <script src="https://www.gstatic.com/firebasejs/8.6.8/firebase-app.js"></script>
     <script src="https://www.gstatic.com/firebasejs/8.6.8/firebase-database.js"></script>
     <title>Fetch Data People</title>
@@ -12,19 +13,25 @@
   <body>
     <div class="container">
       <div class="card text-center mt-5">
-        <div class="card-header">
-          Data Fetching
-        </div>
+        <h4 class="card-header">Data Fetching</h4>
         <div class="card-body">
-          <h5 class="card-title">Special title treatment</h5>
-          <p class="card-text">With supporting text below as a natural lead-in to additional content.</p>
-          <a href="#" class="btn btn-primary">Go somewhere</a>
+          <table id="table">
+            <thead>
+              <tr>
+                <th data-field="id">ID</th>
+                <th data-field="device">DEVICE</th>
+                <th data-field="token">TOKEN</th>
+                <th data-field="tanggal">TANGGAL</th>
+              </tr>
+            </thead>
+          </table>
         </div>
         <div class="card-footer text-muted">
-          2 days ago
+          READABLE USAGE
         </div>
       </div>
       <script>
+        var $table = $('#table');
         var firebaseConfig = {
             apiKey: "AIzaSyA7aOALLRGxJcFdbAaC3zyGFowwXw0hfRM",
             authDomain: "trackinguserhtc.firebaseapp.com",
@@ -39,10 +46,17 @@
             reading.on('value', function(snapshot) {
               snapshot.forEach(function(childSnapshot) {
                 var childData = childSnapshot.val();
-                console.log(childData);
+                var data = [{
+                 'id': childData.user_htc,
+                 'device': childData.device_id,
+                 'token': childData.secret_token,
+                 'tanggal': childData.tanggal,
+                 }];
+                $table.bootstrapTable({data: data})
                });
             });
       </script>
     <script src="bundle.js"></script>
+    <script src="table.js"></script>
   </body>
 </html>
