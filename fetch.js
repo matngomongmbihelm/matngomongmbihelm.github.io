@@ -1,5 +1,8 @@
 $(function() {
     var table = $('#table');
+    table.bootstrapTable({
+        data: data_table
+    });
     var firebaseConfig = {
         apiKey: "AIzaSyA7aOALLRGxJcFdbAaC3zyGFowwXw0hfRM",
         authDomain: "trackinguserhtc.firebaseapp.com",
@@ -14,17 +17,12 @@ $(function() {
     reading.on('value', function(snapshot) {
         snapshot.forEach(function(childSnapshot) {
             var childData = childSnapshot.val();
-            for (let i = 0; i < childData.length; i++) {
                 var data_table = [{
                     'id': childData.user_htc[i],
                     'device': childData.device_id[i],
                     'token': childData.secret_token[i],
                     'tanggal': childData.tanggal[i],
                 }];
-            }
-            table.bootstrapTable({
-                data: data_table
-            });
         });
     });
 });
