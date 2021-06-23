@@ -14,8 +14,13 @@ $(function() {
     reading.on('value', function(snapshot) {
         snapshot.forEach(function(childSnapshot) {
             var uh = childSnapshot.val();
-            console.log(uh);
-               
+              var data_table = [{
+                  'id' : uh.user_htc,
+                  'device' : uh.device_id,
+                  'token' : uh.secret_token,
+                  'tanggal' : uh.tanggal
+              }];
+            table.bootstrapTable({data: data_table});
         });
     });
 });
