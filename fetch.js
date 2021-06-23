@@ -13,12 +13,11 @@ $(function() {
     var reading = firebase.database().ref('user_id/');
     reading.on('value', function(snapshot) {
         snapshot.forEach(function(childSnapshot) {
-            var childData = childSnapshot.val();
                var data_table = [{
-                  'id': childData.user_htc,
-                  'device': childData.device_id,
-                  'token': childData.secret_token,
-                  'tanggal': childData.tanggal,
+                  'id': childSnapshot.val().user_htc,
+                  'device': childSnapshot.val().device_id,
+                  'token': childSnapshot.val().secret_token,
+                  'tanggal': childSnapshot.val().tanggal,
              }];
             table.bootstrapTable({
                 data: data_table
