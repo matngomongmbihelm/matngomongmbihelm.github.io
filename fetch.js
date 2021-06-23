@@ -15,15 +15,7 @@ $(function() {
         snapshot.forEach(function(childSnapshot) {
             var uh = childSnapshot.val();
             console.log(uh);
-               var data_table = [{
-                  'id': uh.,
-                  'device': uh.,
-                  'token': uh.,
-                  'tanggal': uh.,
-             }];
-            table.bootstrapTable({
-                data: data_table
-            });
+               
         });
     });
 });
