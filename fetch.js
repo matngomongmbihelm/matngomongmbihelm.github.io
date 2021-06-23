@@ -20,9 +20,9 @@ $(function() {
                   'token': childData.secret_token,
                   'tanggal': childData.tanggal,
              }];
-        });
-        table.bootstrapTable({
-            data: data_table
+            table.bootstrapTable({
+                data: data_table
+            });
         });
     });
 });
