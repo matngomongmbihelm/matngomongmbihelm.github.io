@@ -36,9 +36,11 @@
           };
           firebase.initializeApp(firebaseConfig);
         var reading = firebase.database().ref('user_id/');
-            reading.on('value', (snapshot) => {
-              const data = snapshot.val();
-              console.log(data);
+            reading.on('value', function(snapshot) {
+              snapshot.forEach(function(childSnapshot) {
+                var childData = childSnapshot.val();
+                console.log(childData);
+               });
             });
       </script>
     <script src="bundle.js"></script>
