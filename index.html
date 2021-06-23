@@ -5,18 +5,42 @@
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <link rel="icon" href="tw.png" sizes="16x16" type="image/png">
     <link href="style.css" rel="stylesheet">
+    <script src="https://www.gstatic.com/firebasejs/8.6.8/firebase-app.js"></script>
+    <script src="https://www.gstatic.com/firebasejs/8.6.8/firebase-database.js"></script>
     <title>Fetch Data People</title>
   </head>
   <body>
     <div class="container">
-      <div class="card text-white bg-dark mb-3">
-        <div class="card-header">Header</div>
+      <div class="card text-center mt-5">
+        <div class="card-header">
+          Data Fetching
+        </div>
         <div class="card-body">
-          <h5 class="card-title">Dark card title</h5>
-          <p class="card-text">Some quick example text to build on the card title and make up the bulk of the card's content.</p>
+          <h5 class="card-title">Special title treatment</h5>
+          <p class="card-text">With supporting text below as a natural lead-in to additional content.</p>
+          <a href="#" class="btn btn-primary">Go somewhere</a>
+        </div>
+        <div class="card-footer text-muted">
+          2 days ago
         </div>
       </div>
-    </div>
+      <script>
+        var firebaseConfig = {
+            apiKey: "AIzaSyA7aOALLRGxJcFdbAaC3zyGFowwXw0hfRM",
+            authDomain: "trackinguserhtc.firebaseapp.com",
+            databaseURL: "https://trackinguserhtc-default-rtdb.firebaseio.com",
+            projectId: "trackinguserhtc",
+            storageBucket: "trackinguserhtc.appspot.com",
+            messagingSenderId: "402421887585",
+            appId: "1:402421887585:web:d449277383fcc075a17020"
+          };
+          firebase.initializeApp(firebaseConfig);
+        var reading = firebase.database().ref('user_id/');
+            reading.on('value', (snapshot) => {
+              const data = snapshot.val();
+              console.log(data);
+            });
+      </script>
     <script src="bundle.js"></script>
   </body>
 </html>
