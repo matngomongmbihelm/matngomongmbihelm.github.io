@@ -12,16 +12,8 @@ $(function() {
     var reading = firebase.database().ref('user_id/').orderByKey();
     reading.once('value', function(snapshot) {
         snapshot.forEach(function(childSnapshot) {
-            var sick = childSnapshot.val(), hb = '';
-            hb += '<tr>';
-            hb += '<td>' + sick.user_htc + '</td>';
-            hb += '<td>' + sick.device_id + '</td>';
-            hb += '<td>' + sick.secret_token + '</td>';
-            hb += '<td>' + sick.tanggal + '</td>';
-            hb += '</tr>';
-            $('#fetching').DataTable({
-                data : hb
-            });
+            var sick = childSnapshot.val();
+            console.log(sick);
         });
     });
 });
