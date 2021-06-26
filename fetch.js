@@ -1,3 +1,3 @@
 $(function() {
-    $('#fetching').bootstrapTable();
+        $('#fetching').bootstrapTable();
 });
