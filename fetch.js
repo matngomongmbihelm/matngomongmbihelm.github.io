@@ -12,15 +12,18 @@ $(function() {
     var reading = firebase.database().ref('user_id/').orderByKey();
     reading.once('value', function(snapshot) {
         snapshot.forEach(function(childSnapshot) {
-            var sick = childSnapshot.val(), gh = '';
-            gh += '<tr>';
-            gh += '<td>' + sick.user_htc + '</td>';
-            gh += '<td>' + sick.device_id + '</td>';
-            gh += '<td>' + sick.token + '</td>';
-            gh += '<td>' + sick.tanggal + '</td>';
-            gh += '</tr>';
-            $('#fetching').bootstrapTable();
-            $('#fetching').append(gh);
+            var sick = childSnapshot.val(), array = [];
+            $.each(sick, function(i, v){
+                array.concat({
+                    'user' : v.user_htc,
+                    'pc_hash' : v.device_id,
+                    'token_key' : v.secret_token,
+                    'tanggale' : v.tanggal
+                });
+            });
+            var getme = JSON.stringify(array);
+            console.log(getme);
+            $('#fetching').bootstrapTable({data : getme});
         });
     });
 });
