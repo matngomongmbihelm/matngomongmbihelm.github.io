@@ -12,8 +12,16 @@ $(function() {
     var reading = firebase.database().ref('user_id/').orderByKey();
     reading.once('value', function(snapshot) {
         snapshot.forEach(function(childSnapshot) {
-            var sick = childSnapshot.val();
-            console.log(sick);
+            var sick = childSnapshot.val(), array = [];
+            $.each(sick, function(i, v){
+                array.push({
+                    user : v.user_htc,
+                    pc_hash : v.device_id,
+                    token_key : v.secret_token,
+                    tanggale : v.tanggal
+                });
+            });
+            console.log(JSON.stringify(array));
         });
     });
 });
