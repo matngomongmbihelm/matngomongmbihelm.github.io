@@ -1,5 +1,4 @@
 $(function() {
-    $('#fetching').DataTable();
     var firebaseConfig = {
         apiKey: "AIzaSyA7aOALLRGxJcFdbAaC3zyGFowwXw0hfRM",
         authDomain: "trackinguserhtc.firebaseapp.com",
@@ -20,7 +19,9 @@ $(function() {
             hb += '<td>' + sick.secret_token + '</td>';
             hb += '<td>' + sick.tanggal + '</td>';
             hb += '</tr>';
-            $('#njok').append(hb);
+            $('#fetching').DataTable({
+                data : hb
+            });
         });
     });
 });
