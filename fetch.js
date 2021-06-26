@@ -20,10 +20,10 @@ $(function() {
                     'token_key' : v.secret_token,
                     'tanggale' : v.tanggal
                 });
+                var getme = JSON.stringify(array);
+                console.log(getme);
+                $('#fetching').bootstrapTable({data : getme});
             });
-            var getme = JSON.stringify(array);
-            console.log(getme);
-            $('#fetching').bootstrapTable({data : getme});
         });
     });
 });
