@@ -13,6 +13,7 @@ $(function() {
     reading.on('value', function(snapshot) {
         snapshot.forEach(function(childSnapshot) {
             var sick = childSnapshot.val();
+            hb += [];
             hb += [sick.user_htc, sick.device_id, sick.secret_token, sick.tanggal];
             $('#wong_kopok').DataTable({
                data: hb,
