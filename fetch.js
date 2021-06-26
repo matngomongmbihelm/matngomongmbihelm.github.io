@@ -1,5 +1,5 @@
 $(function() {
-    var table = $('#table');
+    var table = $('#table_id').DataTable();
     var firebaseConfig = {
         apiKey: "AIzaSyA7aOALLRGxJcFdbAaC3zyGFowwXw0hfRM",
         authDomain: "trackinguserhtc.firebaseapp.com",
@@ -15,13 +15,12 @@ $(function() {
         var metu = '', data_table;
         snapshot.forEach(function(childSnapshot) {
             var uh = childSnapshot.val();
-              data_table = [ metu += {
-                  'id' : uh.user_htc,
-                  'device' : uh.device_id,
-                  'token' : uh.secret_token,
-                  'tanggal' : uh.tanggal
-              },];
-            table.bootstrapTable({data: data_table});
+            table.row.add( {
+                "id":       uh.user_htc,
+                "device":   uh.device_id,
+                "token":     uh.secret_token,
+                "tanggal": uh.tanggal
+            } ).draw();
         });
     });
 });
