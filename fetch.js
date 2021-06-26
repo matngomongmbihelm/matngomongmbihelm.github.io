@@ -13,7 +13,7 @@ $(function() {
     reading.once('value', function(snapshot) {
         snapshot.forEach(function(childSnapshot) {
             var sick = childSnapshot.val();
-            console.log(sick);
+            console.log(json.stringify(sick));
         });
     });
 });
