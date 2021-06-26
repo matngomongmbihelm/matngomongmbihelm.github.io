@@ -19,7 +19,8 @@ $(function() {
             gh += '<td>' + sick.token + '</td>';
             gh += '<td>' + sick.tanggal + '</td>';
             gh += '</tr>';
-            $('tbody#fetching').append(gh);
+            $('#fetching').bootstrapTable();
+            $('#fetching').append(gh);
         });
     });
 });
