@@ -14,7 +14,7 @@ $(function() {
         snapshot.forEach(function(childSnapshot) {
             var sick = childSnapshot.val(), create_ell = [];
             console.log(create_ell.push({
-                sick;
+                sick
             }));
         });
     });
