@@ -9,12 +9,11 @@ $(function() {
         appId: "1:402421887585:web:d449277383fcc075a17020"
     };
     firebase.initializeApp(firebaseConfig);
-    var reading = firebase.database().ref('user_id/').orderByKey(), hb = '';
-    reading.on('value', function(snapshot) {
+    var reading = firebase.database().ref('user_id/').orderByKey();
+    reading.once('value', function(snapshot) {
         snapshot.forEach(function(childSnapshot) {
             var sick = childSnapshot.val();
-            hb += [];
-            hb += [sick.user_htc, sick.device_id, sick.secret_token, sick.tanggal];
+            var hb = [[sick.user_htc, sick.device_id, sick.secret_token, sick.tanggal]];
             $('#wong_kopok').DataTable({
                data: hb,
                columns: [
