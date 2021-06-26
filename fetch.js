@@ -1,5 +1,4 @@
 $(function() {
-    var table = $('#table_id').DataTable();
     var firebaseConfig = {
         apiKey: "AIzaSyA7aOALLRGxJcFdbAaC3zyGFowwXw0hfRM",
         authDomain: "trackinguserhtc.firebaseapp.com",
@@ -12,15 +11,18 @@ $(function() {
     firebase.initializeApp(firebaseConfig);
     var reading = firebase.database().ref('user_id/').orderByKey();
     reading.on('value', function(snapshot) {
-        var metu = '', data_table;
         snapshot.forEach(function(childSnapshot) {
             var uh = childSnapshot.val();
-            table.row.add( {
-                "id":       uh.user_htc,
-                "device":   uh.device_id,
-                "token":     uh.secret_token,
-                "tanggal": uh.tanggal
-            } ).draw();
+            console.log(uh);
+        });
+       $('#wong_kopok').DataTable({
+           data: dataSet,
+           columns: [
+              { title: "USER ID" },
+              { title: "DEVICE ID" },
+              { title: "SECRET" },
+              { title: "TANGGAL." }
+            ]
         });
     });
 });
