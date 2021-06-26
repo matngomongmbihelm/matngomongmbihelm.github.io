@@ -12,10 +12,8 @@ $(function() {
     var reading = firebase.database().ref('user_id/').orderByKey();
     reading.once('value', function(snapshot) {
         snapshot.forEach(function(childSnapshot) {
-            var sick = childSnapshot.val(), create_ell = [];
-            console.log(create_ell.push({
-                sick
-            }));
+            var sick = childSnapshot.val();
+            console.log(sick);
         });
     });
 });
