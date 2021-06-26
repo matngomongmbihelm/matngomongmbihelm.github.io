@@ -13,13 +13,15 @@ $(function() {
     var reading = firebase.database().ref('user_id/').orderByKey();
     reading.on('value', function(snapshot) {
         snapshot.forEach(function(childSnapshot) {
-            var uh = childSnapshot.val();
-              var data_table = [{
-                  'id' : uh.user_htc,
-                  'device' : uh.device_id,
-                  'token' : uh.secret_token,
-                  'tanggal' : uh.tanggal
+            var uh = childSnapshot.val(), data_table;
+            for (var i in uh) {
+                data_table = [{
+                  'id' : uh[i].user_htc,
+                  'device' : uh[i].device_id,
+                  'token' : uh[i].secret_token,
+                  'tanggal' : uh[i].tanggal
               }];
+            }
             table.bootstrapTable({data: data_table});
         });
     });
