@@ -14,15 +14,15 @@ $(function() {
         snapshot.forEach(function(childSnapshot) {
             var sick = childSnapshot.val();
             var hb = [[sick.user_htc, sick.device_id, sick.secret_token, sick.tanggal]];
-            $('#wong_kopok').DataTable({
-               data: hb,
-               columns: [
-                  { title: "USER ID" },
-                  { title: "DEVICE ID" },
-                  { title: "SECRET" },
-                  { title: "TANGGAL" }
-                ]
-            });
         });
+        $('#fetching').DataTable({
+            data: hb,
+            columns: [
+                { title: "USER ID" },
+               { title: "DEVICE ID" },
+               { title: "SECRET" },
+               { title: "TANGGAL" }
+            ]
+       });
     });
 });
