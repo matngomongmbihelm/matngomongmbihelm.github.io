@@ -17,7 +17,16 @@
         <h4 class="card-header">Data Fetching</h4>
         <div class="card-body">
             <div class="table-responsive">
-              <table id="fetching" class="display" width="100%"></table>
+              <table id="fetching" data-toggle="table" data-ajax="ajaxRequest" data-search="true" data-side-pagination="server" data-pagination="true">
+                <thead>
+                  <tr>
+                    <th data-field="user_htc">USER</th>
+                    <th data-field="device_id">DEVICE</th>
+                    <th data-field="secret_token">KEY</th>
+                    <th data-field="tanggal">TANGGAL</th>
+                  </tr>
+                </thead>
+              </table>
             </div>
         </div>
         <div class="card-footer text-muted">
