@@ -16,8 +16,7 @@
       <div class="card text-center mt-2">
         <h4 class="card-header">Data Fetching</h4>
         <div class="card-body">
-            <div class="table-responsive">
-              <table id="fetching" data-toggle="table" data-url="https://trackinguserhtc-default-rtdb.firebaseio.com/user_id.json?print=pretty" data-search="true" data-side-pagination="server" data-pagination="true">
+              <table class="table-responsive" data-method="get" data-toggle="table" data-url="https://trackinguserhtc-default-rtdb.firebaseio.com/user_id.json?print=pretty" data-search="true" data-pagination="true">
                 <thead>
                   <tr>
                     <th data-field="user_htc">USER</th>
@@ -27,7 +26,6 @@
                   </tr>
                 </thead>
               </table>
-            </div>
         </div>
         <div class="card-footer text-muted">
           READABLE USAGE
