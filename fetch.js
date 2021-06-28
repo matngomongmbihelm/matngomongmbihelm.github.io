@@ -5,9 +5,9 @@ $(function() {
             $('#fetching').dataTable({
                 paging: true,
                 searching: true,
-                data: [{
+                data: [[
                     pengguna, os, key_secret, data_tanggal
-                }],
+                ]],
                 columns: [
                     { title: "USER" },
                     { title: "DEVICE" },
