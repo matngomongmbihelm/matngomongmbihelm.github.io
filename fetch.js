@@ -1,7 +1,7 @@
 $(function() {
     $.get('https://trackinguserhtc-default-rtdb.firebaseio.com/user_id.json?print=pretty', function(data){
         $.each(data, function(i, v){
-            var pengguna = Object.values(data).map(object => object.v.user_htc, os = Object.values(data).map(object => object.v.device_id, key_secret = Object.values(data).map(object => object.v.secret_token, data_tanggal = Object.values(data).map(object => object.v.tanggal;
+            var pengguna = Object.values(v).map(object => object.user_htc), os = Object.values(v).map(object => object.device_id), key_secret = Object.values(v).map(object => object.secret_token), data_tanggal = Object.values(v).map(object => object.tanggal);
             var thread_id = [
                     {
                         'user_htc': pengguna,
