@@ -8,7 +8,7 @@ $(function() {
                 token: tok,
                 tanggal: tang
             });
-            console.log(json.stringify(id));
+            console.log(JSON.stringify(id));
         });
     });
 });
