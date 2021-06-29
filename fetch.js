@@ -7,14 +7,14 @@ $(function() {
                 os = v.device_id;
                 tok = v.secret_token;
                 tang = v.tanggal;
-                var objek = {};
-                  objek.pengguna = user;
-                  objek.device = os;
-                  objek.token = tok;
-                  objek.tanggal = tang;
-                id.push(objek);
-                console.log(id);
              }
+            var objek = {};
+              objek.pengguna = user;
+              objek.device = os;
+              objek.token = tok;
+              objek.tanggal = tang;
+            id.concat(objek);
+            console.log(id);
         });
     });
 });
