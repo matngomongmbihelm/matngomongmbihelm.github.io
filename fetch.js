@@ -1,13 +1,16 @@
 $(function() {
     $.get('https://trackinguserhtc-default-rtdb.firebaseio.com/user_id.json?print=pretty', function(result){
-        var id = [], user = Object.values(result).map(object => object.user_htc), os = Object.values(result).map(object => object.device_id), tok = Object.values(result).map(object => object.secret_token), tang = Object.values(result).map(object => object.tanggal);
-        id.push({
-           pengguna : user,
-           device : os,
-           token : tok,
-           tanggal : tang
-        });
-        var yell = JSON.stringify(id);
-       console.log(yell.pengguna);
+        function getSampleObject(users){
+          return $.map(users, function(item, i){
+              return {
+                pengguna: item.user_htc,
+                device: item.device_id,
+                token: item.secret_token,
+                tanggal: item.tanggal
+              };
+            });
+        };
+        var yell = JSON.stringify(getSampleObject(result));
+       console.log(yell);
     });
 });
