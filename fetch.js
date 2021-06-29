@@ -11,6 +11,6 @@ $(function() {
             });
         };
         var yell = JSON.stringify(getSampleObject(result));
-       console.log(yell);
+        $('#data_fecth').bootstrapTable({data: yell});
     });
 });
