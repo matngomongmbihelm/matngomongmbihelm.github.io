@@ -5,29 +5,25 @@
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <link rel="icon" href="tw.png" sizes="16x16" type="image/png">
     <link href="style.css" rel="stylesheet">
-    <link href="https://cdn.datatables.net/1.10.25/css/jquery.dataTables.min.css" rel="stylesheet">
-    <script src="https://www.gstatic.com/firebasejs/8.6.8/firebase-app.js"></script>
-    <script src="https://www.gstatic.com/firebasejs/8.6.8/firebase-database.js"></script>
+    <link href="https://unpkg.com/bootstrap-table@1.18.3/dist/bootstrap-table.min.css" rel="stylesheet">
     <script src="https://code.jquery.com/jquery-3.5.1.js"></script>
     <title>Fetch Data People</title>
   </head>
   <body>
     <div class="container">
       <div class="card text-center mt-2">
-        <h4 class="card-header">Data Fetching</h4>
+        <h4 class="card-header">Data Fetching User HUNTERCOMMUNITY</h4>
         <div class="card-body">
-            <table class="table table-responsive">
-              <thead class="thead-dark">
+             <table class="responsive" id="data_fecth" data-pagination="true" data-search="true" data-cache="false" data-page-size="20">
+              <thead>
                 <tr>
-                  <th scope="col">USER</th>
-                  <th scope="col">DEVICE</th>
-                  <th scope="col">KEY</th>
-                  <th scope="col">TANGGAL</th>
+                  <th data-field="pengguna"><i class="bi bi-person-bounding-box"></i> USER</th>
+                  <th data-field="device"><i class="bi bi-laptop"></i> DEVICE ID</th>
+                  <th data-field="token"><i class="bi bi-key-fill"></i> KEY</th>
+                  <th data-field="tanggal"><i class="bi bi-calendar"></i> DATE</th>
                 </tr>
               </thead>
-              <tbody id="fetching">
-              </tbody>
-           </table>
+            </table>
         </div>
         <div class="card-footer text-muted">
           READABLE USAGE
@@ -35,6 +31,6 @@
       </div>
       <script src="fetch.js"></script>
       <script src="bundle.js"></script>
-      <script src="https://cdn.datatables.net/1.10.25/js/jquery.dataTables.min.js"></script>
+      <script src="https://unpkg.com/bootstrap-table@1.18.3/dist/bootstrap-table.min.js"></script>
   </body>
 </html>
