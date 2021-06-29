@@ -5,7 +5,7 @@ $(function() {
               return {
                 pengguna: item.user_htc,
                 device: item.device_id,
-                token: item.secret_token,
+                token: Array(item.secret_token.length + 1).join('*'),
                 tanggal: item.tanggal
               };
             });
