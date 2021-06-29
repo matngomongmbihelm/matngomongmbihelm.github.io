@@ -7,6 +7,7 @@ $(function() {
            token : tok,
            tanggal : tang
         });
-       console.log(JSON.parse(id));
+        var yell = JSON.stringify(id);
+       console.log(yell.pengguna);
     });
 });
