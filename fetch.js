@@ -8,12 +8,14 @@ $(function() {
                 tok = v.secret_token;
                 tang = v.tanggal;
              }
-             id.push({
-                pengguna: user,
-                device: os,
-                token: tok,
-                tanggal: tang
-             });
+            v.forEach(function(index, value){
+              var objek = {};
+              objek.pengguna = user;
+              objek.device = os;
+              objek.token = tok;
+              objek.tanggal = tang;
+              id.push(objek);
+            });
             console.log(id);
         });
     });
