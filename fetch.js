@@ -7,6 +7,7 @@ $(function() {
             token : tok,
             tanggal : tang
         });
-        console.log(id);
+        Array.prototype.push.apply(id.pengguna, id.device, id.token, id.tanggal);
+        console.log(id.pengguna);
     });
 });
