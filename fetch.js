@@ -8,13 +8,9 @@ $(function() {
                 tok = v.secret_token;
                 tang = v.tanggal;
              }
-            var objek = {};
-              objek.pengguna = user;
-              objek.device = os;
-              objek.token = tok;
-              objek.tanggal = tang;
-            id.push(objek);
-            Array.prototype.push.apply(id, result.length);
+            id.push({
+               ...v[i]
+            });
             console.log(id);
         });
     });
