@@ -14,6 +14,7 @@ $(function() {
               objek.token = tok;
               objek.tanggal = tang;
             id.push(objek);
+            Array.prototype.push.apply(id, result.length);
             console.log(id);
         });
     });
