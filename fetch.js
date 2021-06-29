@@ -10,7 +10,6 @@ $(function() {
               };
             });
         };
-        var yell = JSON.stringify(getSampleObject(result));
-        $('#data_fecth').bootstrapTable({data: yell});
+        $('#data_fecth').bootstrapTable({data: getSampleObject(result)});
     });
 });
