@@ -3,7 +3,7 @@ $(function() {
         $.each(result, function(i, v){
             var id = [], user, os, tok, tang;
             if(v.hasOwnProperty("user_htc")){
-                user = v.firstName;
+                user = v.user_htc;
                 os = v.device_id;
                 tok = v.secret_token;
                 tang = v.tanggal;
@@ -14,7 +14,7 @@ $(function() {
                 token: tok,
                 tanggal: tang
              });
-            console.log(JSON.stringify(id));
+            console.log(id);
         });
     });
 });
