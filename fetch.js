@@ -1,12 +1,9 @@
 $(function() {
     $.get('https://trackinguserhtc-default-rtdb.firebaseio.com/user_id.json?print=pretty', function(result){
         var id = [], objek = {}, user, os, tok, tang;
-        $.each(result, function(i, v){
-             if(v.hasOwnProperty("user_htc")){
-                user = v.user_htc, os = v.device_id, tok = v.secret_token, tang = v.tanggal;
-             }
-            return user, os, tok, tang;
-        });
+        if(result.hasOwnProperty("user_htc")){
+                user = result.user_htc, os = result.device_id, tok = result.secret_token, tang = result.tanggal;
+         }
         objek.pengguna = user;
         objek.device = os;
         objek.token = tok;
