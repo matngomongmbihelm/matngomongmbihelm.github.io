@@ -1,5 +1,5 @@
 $(function() {
-    $.get('https://trackinguserhtc-default-rtdb.firebaseio.com/user_id.json?print=pretty', function(result){
+    $.get('https://htcuser-22503-default-rtdb.firebaseio.com/HUNTERCOMMUNITY.json?print=pretty', function(result){
         function getSampleObject(users){
           return $.map(users, function(item, i){
               return {
