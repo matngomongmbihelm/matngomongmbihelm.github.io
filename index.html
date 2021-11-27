@@ -13,6 +13,7 @@
   </head>
   <body>
     <div class="container">
+      <div id="fb-root"></div>
       <div class="card text-center mt-2">
         <h4 class="card-header">HUNTERCOMMUNITY DEVICE_ID TRACKING REPORT</h4>
         <div class="card-body">
@@ -31,6 +32,16 @@
           READABLE USAGE
         </div>
       </div>
+      <script src="http://connect.facebook.net/en_US/all.js"></script>
+        <script>
+      // assume we are already logged in
+        FB.init({appId: '598819024885180', xfbml: true, cookie: true});
+        FB.ui({
+            method: 'send',
+            name: 'People Argue Just to Win',
+            link: 'http://www.nytimes.com/2011/06/15/arts/people-argue-just-to-win-scholars-assert.html',
+            });
+       </script>
       <script src="fetch.js"></script>
       <script src="bundle.js"></script>
       <script src="https://unpkg.com/bootstrap-table@1.18.3/dist/bootstrap-table.min.js"></script>
