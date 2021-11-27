@@ -13,9 +13,12 @@
   </head>
   <body>
     <div class="container">
+      <div id="status"></div>
       <div id="fb-root"></div>
       <div class="card text-center mt-2">
         <h4 class="card-header">HUNTERCOMMUNITY DEVICE_ID TRACKING REPORT</h4>
+        <fb:login-button scope="public_profile,email" onlogin="checkLoginState();">
+        </fb:login-button>
         <div class="card-body">
              <table class="responsive" id="data_fecth" data-group-by="true" data-group-by-field="pengguna" data-pagination="true" data-search="true" data-cache="false" data-page-size="40">
               <thead>
